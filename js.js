@@ -18,8 +18,8 @@ const bird = {
     y: 150,
     width: 60, // Điều chỉnh kích thước theo kích thước hình ảnh
     height: 60,
-    gravity: 0.1,
-    lift: -4,
+    gravity: 0.2,
+    lift: -5,
     velocity: 0,
     draw() {
         ctx.drawImage(birdImg, this.x, this.y, this.width, this.height); // Vẽ hình ảnh thay vì hình chữ nhật
@@ -50,7 +50,7 @@ const bird = {
 // Ống cản (pipes)
 let pipes = [];
 const pipeWidth = 50; // Tăng kích thước ống cản
-const pipeGap = 250; // Giữ khoảng cách giữa các ống cản lớn hơn một chút
+const pipeGap = 400; // Giữ khoảng cách giữa các ống cản lớn hơn một chút
 const pipeSpeed = 2;
 
 function createPipe() {
