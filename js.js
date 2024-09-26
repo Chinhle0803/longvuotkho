@@ -16,9 +16,9 @@ birdImg.src = 'bird.png'; // Đường dẫn đến hình ảnh avatar bạn mu�
 const bird = {
     x: 50,
     y: 150,
-    width: 80, // Điều chỉnh kích thước theo kích thước hình ảnh
-    height: 80,
-    gravity: 0.05,
+    width: 60, // Điều chỉnh kích thước theo kích thước hình ảnh
+    height: 60,
+    gravity: 0.1,
     lift: -4,
     velocity: 0,
     draw() {
