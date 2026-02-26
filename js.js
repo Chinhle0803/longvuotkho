@@ -126,15 +126,42 @@ function resetGame() {
     gameOver = false;
 }
 
+// document.addEventListener('keydown', function(e) {
+//     if (e.code === 'Space') {
+//         if (gameOver) {
+//             resetGame();
+//         } else {
+//             bird.flap();
+//         }
+//     }
+// });
+
+
+function handleInput() {
+    if (gameOver) {
+        resetGame();
+    } else {
+        bird.flap();
+    }
+}
+
+// Hỗ trợ bàn phím
 document.addEventListener('keydown', function(e) {
     if (e.code === 'Space') {
-        if (gameOver) {
-            resetGame();
-        } else {
-            bird.flap();
-        }
+        handleInput();
     }
 });
+
+// Hỗ trợ click chuột
+canvas.addEventListener('click', function() {
+    handleInput();
+});
+
+// Hỗ trợ chạm màn hình (mobile)
+canvas.addEventListener('touchstart', function(e) {
+    e.preventDefault(); // Ngăn cuộn trang khi chạm
+    handleInput();
+}, { passive: false });
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
